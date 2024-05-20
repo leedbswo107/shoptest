@@ -29,12 +29,12 @@ const Product = () => {
   const handleShow = () => setShow(true);
   // id가 일치하는 하나의 상품
   const getProductList = async () => {
-    const url = `http://localhost:4000/products/${id}`;
+    const url = `https://my-json-server.typicode.com/leedbswo107/shoptest/products/${id}`;
     const response = await fetch(url);
     const data = await response.json();
     setProducts(data);
 
-    const url2 = `http://localhost:4000/products?category=${data.category}`;
+    const url2 = `https://my-json-server.typicode.com/leedbswo107/shoptest/products?category=${data.category}`;
     const response2 = await fetch(url2);
     const data2 = await response2.json();
     setSimilarList(data2);
