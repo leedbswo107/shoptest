@@ -1,0 +1,76 @@
+.hd {
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+.hd h1 img {
+  width: 200px;
+}
+.hd nav,
+.hd nav > div {
+  display: flex;
+}
+.hd .person::before {
+  content: '';
+  height: 50%;
+  width: 1px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: lightgray;
+  margin: 0 2rem;
+}
+.hd a {
+  padding: 1rem;
+  transition: 0.3s;
+}
+.hd a:hover {
+  color: lightcoral;
+}
+.ham {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .hd {
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    height: 100px;
+    background-color: white;
+  }
+  .ham {
+    display: block;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    z-index: 99;
+  }
+  .hd nav {
+    display: none;
+    border: 1px solid lightblue;
+    position: fixed;
+    top: 100px;
+
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 99;
+    color: white;
+  }
+  .hd nav .gnb {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hd nav .person {
+    justify-content: center;
+  }
+  .hd nav .person::before {
+    display: none;
+  }
+  .hd nav.on {
+    display: block;
+  }
+}
